@@ -26,7 +26,6 @@ end
 --A handle representing the link between an Observer and an Observable, as well as any
 --work required to clean up after the Observable completes or the Observer unsubscribes.
 ---@class Subscription
-
 local Subscription = Class.class("Subsription")
 
 ---Creates a new Subscription.
@@ -84,6 +83,7 @@ function Observer:initialize(onNext, onError, onCompleted)
 	self.stopped = false
 end
 
+---@return Observer
 function Observer.create(onNext, onError, onCompleted)
 	return Observer(onNext, onError, onCompleted)
 end
@@ -133,7 +133,7 @@ end
 ---@param onNext function Called when the Observable produces a value.
 ---@param onError function Called when the Observable terminates due to an error.
 ---@param onCompleted function Called when the Observable completes normally.
----@return Observable
+---@return Subscription
 function Observable:subscribe(onNext, onError, onCompleted)
 	if type(onNext) == 'table' then
 		return self._subscribe(onNext)

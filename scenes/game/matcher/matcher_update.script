@@ -1,5 +1,5 @@
 local MATCHER = require "scenes.game.matcher.matcher"
-
+local WORLD = require "world.world"
 local RX = require "libs.rx"
 
 local Scheduler = RX.CooperativeScheduler.create()
@@ -8,14 +8,21 @@ function init(self)
 	timer.delay(0.1,false,function ()
 		MATCHER:start_lvl()
 	end)
+
+	self.subscription = WORLD.rx:go_distinct(Scheduler):subscribe(function (v)
+		if v == WORLD.COMMANDS.BTN_ACCEPTED then
+			print("update scene")
+		end
+	end)
+
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
+	self.subscription:unsubscribe()
 end
 
 function update(self, dt)
+	Scheduler:update(dt)
 	MATCHER:update_texture()
 end
 

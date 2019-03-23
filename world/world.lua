@@ -6,6 +6,10 @@ local RX = require "libs.rx"
 ---@class World:Observable
 local M = COMMON.class("World")
 
+M.COMMANDS = {
+	BTN_ACCEPTED = "BTN_ACCEPTED"
+}
+
 function M:reset()
 	if self.lvl then
 		self.lvl:unload()

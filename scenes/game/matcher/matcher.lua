@@ -32,9 +32,15 @@ function Matcher:start_lvl()
     }
     self.free, self.fill = drawpixels.check_fill(buffer_info)
     self.start_free = self.free + self.fill
+   -- model.set_constant("test_model#model","tint" , vmath.vector4(0,0,0,0.5))
+end
+
+function Matcher:render()
+   -- model.set_constant("test_model#model","tint" , vmath.vector4(0,0,0,0))
 end
 
 function  Matcher:update_texture()
+    --model.set_constant("test_model#model","tint.w" , 1)
     if self.start_free == 0 then return end --wait initial check
     --update test texture
     self.buffer, self.w, self.h = screenshot.buffer()
