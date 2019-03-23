@@ -48,6 +48,8 @@ function  Matcher:update_texture()
     self.fill = fill
     self.free = free
     self.percent = self.fill/self.start_free
+    local resource_path = go.get("test_model#model", "texture0")
+    resource.set_texture(resource_path, { type = resource.TEXTURE_TYPE_2D, width = self.w, height = self.h, format = resource.TEXTURE_FORMAT_RGBA }, self.buffer)
 end    
 
 return Matcher()

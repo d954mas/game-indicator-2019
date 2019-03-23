@@ -1,22 +1,24 @@
 local Matcher = require "scenes.game.matcher.matcher"
 
-local function fixed_projection(near, far, zoom)
+local function fixed_projection(self,near, far, zoom)
     local projected_width = render.get_window_width() / (zoom or 1)
     local projected_height = render.get_window_height() / (zoom or 1)
     local xoffset = -(projected_width - render.get_width()) / 2
     local yoffset = -(projected_height - render.get_height()) / 2
+    self.p_w = projected_width
+    self.p_h = projected_height
     return vmath.matrix4_orthographic(-projected_width/2, projected_width/2,-projected_height/2, projected_height/2, near, far)
 end
 --
 -- projection that centers and fits content with maintained aspect ratio
 --
-local function fixed_fit_projection(near, far)
+local function fixed_fit_projection(self, near, far)
     local width = render.get_width()
     local height = render.get_height()
     local window_width = render.get_window_width()
     local window_height = render.get_window_height()
     local zoom = math.min(window_width / width, window_height / height)
-    return fixed_projection(near, far, zoom)
+    return fixed_projection(self,near, far, zoom)
 end
 --
 -- projection that stretches content
@@ -26,7 +28,7 @@ local function stretch_projection(near, far)
 end
 
 local function get_projection(self)
-    return self.projection_fn(self.near, self.far, self.zoom)
+    return self.projection_fn(self,self.near, self.far, self.zoom)
 end
 
 function init(self)
@@ -37,7 +39,7 @@ function init(self)
     self.model_pred = render.predicate({"model"})
     self.mask_pred = render.predicate({"mask"})
 
-    self.clear_color = vmath.vector4(0,1, 0, 0)
+    self.clear_color = vmath.vector4(0,0, 0, 0)
 
     self.view = vmath.matrix4()
 
@@ -50,7 +52,11 @@ function init(self)
     self.far = 1
     self.projection_fn = fixed_fit_projection
     Matcher:init_buffer()
-
+    screen_to_world = function(pos)
+        local x = pos.x/540* self.p_w - self.p_w/2
+        local y = pos.y/960 * self.p_h - self.p_h/2
+        return vmath.vector3(x,y,0)
+    end
 end
 
 function update(self)
@@ -95,8 +101,11 @@ function update(self)
     render.disable_state(render.STATE_CULL_FACE)
     
     render.draw(self.tile_pred)
-  --  render.draw(self.particle_pred)
-   -- render.draw(self.model_pred)
+    render.draw(self.model_pred)
+    render.disable_state(render.STATE_STENCIL_TEST)
+    render.draw(self.particle_pred)
+
+
     render.draw_debug3d()
 
     -- render GUI

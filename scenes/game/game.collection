@@ -170,6 +170,48 @@ embedded_instances {
   }
 }
 embedded_instances {
+  id: "model_scale"
+  children: "model_scale_x"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 50.0
+    y: 50.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "model_scale_x"
+  children: "test_model"
+  data: ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
   id: "test_model"
   data: "components {\n"
   "  id: \"matcher_update\"\n"
@@ -190,7 +232,7 @@ embedded_instances {
   "  id: \"model\"\n"
   "  type: \"model\"\n"
   "  data: \"mesh: \\\"/assets/models/quad.dae\\\"\\n"
-  "material: \\\"/builtins/materials/model.material\\\"\\n"
+  "material: \\\"/assets/materials/model.material\\\"\\n"
   "textures: \\\"/assets/images/test_matcher.png\\\"\\n"
   "skeleton: \\\"\\\"\\n"
   "animations: \\\"\\\"\\n"
@@ -211,8 +253,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 742.0
-    y: -292.0
+    x: 0.0
+    y: 0.0
     z: 0.0
   }
   rotation {
@@ -222,8 +264,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 16650.0
-    y: 16650.0
+    x: 540.0
+    y: 960.0
     z: 1.0
   }
 }

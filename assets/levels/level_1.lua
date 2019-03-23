@@ -10,7 +10,7 @@ function Lvl:initialize(...)
     }
 
     self.figures = {
-        Region("rect",0,0,3330)
+        Region("rect",0,0,33)
     }
 end
 
