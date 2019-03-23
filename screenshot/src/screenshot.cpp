@@ -27,90 +27,9 @@ static GLubyte* ReadPixels(unsigned int x, unsigned int y, unsigned int w, unsig
 }
 
 
-static int Pixels(lua_State* L) {
-	int top = lua_gettop(L);
 
-	unsigned int x, y, w, h;
-	if (top == 4) {
-		x = luaL_checkint(L, 1);
-		y = luaL_checkint(L, 2);
-		w = luaL_checkint(L, 3);
-		h = luaL_checkint(L, 4);
-	} else {
-		GLint viewport[4];
-		glGetIntegerv(GL_VIEWPORT, viewport);
-		x = viewport[0];
-		y = viewport[1];
-		w = viewport[2];
-		h = viewport[3];
-	}
-
-	// read pixels
-	GLubyte* pixels = ReadPixels(x, y, w, h);
-
-	// Put the pixel data onto the stack
-	lua_pushlstring(L, (char*)pixels, w * h);
-	lua_pushnumber(L, w);
-	lua_pushnumber(L, h);
-	delete pixels;
-
-	// Assert that there is three items on the stack.
-	assert(top + 3 == lua_gettop(L));
-
-	// Return 3 items
-	return 3;
-}
-
-static int Png(lua_State* L) {
-	int top = lua_gettop(L);
-
-	// read pixels
-	unsigned int x, y, w, h;
-	if (top == 4) {
-		x = luaL_checkint(L, 1);
-		y = luaL_checkint(L, 2);
-		w = luaL_checkint(L, 3);
-		h = luaL_checkint(L, 4);
-	} else {
-		GLint viewport[4];
-		glGetIntegerv(GL_VIEWPORT, viewport);
-		x = viewport[0];
-		y = viewport[1];
-		w = viewport[2];
-		h = viewport[3];
-	}
-	GLubyte* pixels = ReadPixels(x, y, w, h);
-	unsigned int *p = (unsigned int*)pixels;
-
-	// flip vertically
-	for (int yi=0; yi < (h / 2); yi++) {
-		for (int xi=0; xi < w; xi++) {
-			unsigned int offset1 = xi + (yi * w);
-			unsigned int offset2 = xi + ((h - 1 - yi) * w);
-			unsigned int pixel1 = p[offset1];
-			unsigned int pixel2 = p[offset2];
-			p[offset1] = pixel2;
-			p[offset2] = pixel1;
-		}
-	}
-
-	// encode to png
-	unsigned char* out = 0;
-	size_t outsize = 0;
-	lodepng_encode_memory(&out, &outsize, pixels, w, h, LCT_RGBA, 8);
-	delete pixels;
-
-	// Put the pixel data onto the stack
-	lua_pushlstring(L, (char*)out, outsize);
-	lua_pushnumber(L, w);
-	lua_pushnumber(L, h);
-
-	// Assert that there is three items on the stack.
-	assert(top + 3 == lua_gettop(L));
-
-	// Return 3 items
-	return 3;
-}
+dmBuffer::HBuffer buffers[2];
+bool created_buffers[2];
 
 static int Buffer(lua_State* L) {
 	int top = lua_gettop(L);
@@ -133,12 +52,16 @@ static int Buffer(lua_State* L) {
 	GLubyte* pixels = ReadPixels(x, y, w, h);
 
 	// create buffer
-	dmBuffer::HBuffer buffer;
-	dmBuffer::StreamDeclaration streams_decl[] = {
-		{ dmHashString64("pixels"), dmBuffer::VALUE_TYPE_UINT8, 1 }
-	};
-	dmBuffer::Result r = dmBuffer::Create(w * h * 4, streams_decl, 1, &buffer);
-	if (r == dmBuffer::RESULT_OK) {
+	int buffer_id = luaL_checkint(L, 1);
+	dmBuffer::HBuffer buffer = buffers[buffer_id];
+	//if(!created_buffers[buffer_id]){
+		dmBuffer::StreamDeclaration streams_decl[] = {
+			{ dmHashString64("pixels"), dmBuffer::VALUE_TYPE_UINT8, 1 }
+		};
+		dmBuffer::Result r = dmBuffer::Create(w * h * 4, streams_decl, 1, &buffer);
+		created_buffers[buffer_id] = (r == dmBuffer::RESULT_OK);
+	//}
+	if(created_buffers[buffer_id]){
 		// copy pixels into buffer
 		uint8_t* data = 0;
 		uint32_t datasize = 0;
@@ -255,8 +178,8 @@ static const luaL_reg Module_methods[] = {
 #if defined(__EMSCRIPTEN__)
 	{"html5", HTML5_screenshot},
 #else
-	{"pixels", Pixels},
-	{"png", Png},
+//	{"pixels", Pixels},
+	//{"png", Png},
 	{"buffer", Buffer},
 #endif
 	{0, 0}

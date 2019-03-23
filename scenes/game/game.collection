@@ -192,6 +192,7 @@ embedded_instances {
 }
 embedded_instances {
   id: "model_scale_x"
+  children: "model_fill"
   children: "test_model"
   data: ""
   position {
@@ -256,6 +257,64 @@ embedded_instances {
     x: 0.0
     y: 0.0
     z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 540.0
+    y: 960.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "model_fill"
+  data: "components {\n"
+  "  id: \"matcher_update\"\n"
+  "  component: \"/scenes/game/matcher/matcher_update.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/assets/models/quad.dae\\\"\\n"
+  "material: \\\"/assets/materials/model_fill.material\\\"\\n"
+  "textures: \\\"/assets/images/model_fill.png\\\"\\n"
+  "skeleton: \\\"\\\"\\n"
+  "animations: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "name: \\\"unnamed\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.002
   }
   rotation {
     x: 0.0

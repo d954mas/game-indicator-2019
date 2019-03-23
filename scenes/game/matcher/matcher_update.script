@@ -8,17 +8,9 @@ function init(self)
 	timer.delay(0.1,false,function ()
 		MATCHER:start_lvl()
 	end)
-
-	self.subscription = WORLD.rx:go_distinct(Scheduler):subscribe(function (v)
-		if v == WORLD.COMMANDS.BTN_ACCEPTED then
-			print("update scene")
-		end
-	end)
-
 end
 
 function final(self)
-	self.subscription:unsubscribe()
 end
 
 function update(self, dt)
