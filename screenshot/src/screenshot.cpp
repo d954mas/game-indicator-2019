@@ -17,13 +17,11 @@
 
 #if !defined(__EMSCRIPTEN__)
 
-static GLubyte* ReadPixels(unsigned int x, unsigned int y, unsigned int w, unsigned int h) {
-	GLubyte* data = new GLubyte[w * h * 4];
+static void ReadPixels(unsigned int x, unsigned int y, unsigned int w, unsigned int h, GLubyte*  data) {
 #if defined(__MACH__) && !( defined(__arm__) || defined(__arm64__) )
 	glBindRenderbuffer(GL_RENDERBUFFER, 1);
 #endif
 	glReadPixels(x, y, w, h, GL_RGBA, GL_UNSIGNED_BYTE, data);
-	return data;
 }
 
 
@@ -49,7 +47,7 @@ static int Buffer(lua_State* L) {
 		w = viewport[2];
 		h = viewport[3];
 	}
-	GLubyte* pixels = ReadPixels(x, y, w, h);
+	
 
 	// create buffer
 	int buffer_id = luaL_checkint(L, 1);
@@ -63,11 +61,16 @@ static int Buffer(lua_State* L) {
 	//}
 	if(created_buffers[buffer_id]){
 		// copy pixels into buffer
-		uint8_t* data = 0;
+		GLubyte* data = 0;
 		uint32_t datasize = 0;
 		dmBuffer::GetBytes(buffer, (void**)&data, &datasize);
-		memcpy(data, pixels, datasize);
-		delete pixels;
+		
+		//GLubyte* pixels = new GLubyte[w * h * 4];
+		//GLubyte* pixels = data;
+		ReadPixels(x, y, w, h, data);
+		
+		//memcpy(data, pixels, datasize);
+		//delete pixels;
 
 		// validate and return
 		if (dmBuffer::ValidateBuffer(buffer) == dmBuffer::RESULT_OK) {
@@ -84,7 +87,7 @@ static int Buffer(lua_State* L) {
 	}
 	// buffer creation failed
 	else {
-		delete pixels;
+		//delete pixels;
 		lua_pushnil(L);
 		lua_pushnil(L);
 		lua_pushnil(L);

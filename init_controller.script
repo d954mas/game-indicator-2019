@@ -15,8 +15,8 @@ local scenes = {
 function init(self)
     self.show_profiler = false
     COMMON.input_acquire()
-  --  profiler.enable_ui(true)
-    --profiler.set_ui_vsync_wait_visible(false)
+    profiler.enable_ui(true)
+    profiler.set_ui_vsync_wait_visible(false)
    -- defos.set_view_size(nil, nil, 960, 540)
     --region FIX module not found
     local reg_scenes = {}
