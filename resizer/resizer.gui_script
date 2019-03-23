@@ -1,8 +1,8 @@
 local COMMON = require "libs.common"
-local WIDTH = 960
-local HEIGHT = 720
-local HORIZONTAL = true
-local RESOLUTION_SCALE = 1
+local WIDTH = 540
+local HEIGHT = 960
+local HORIZONTAL = false
+local RESOLUTION_SCALE = 0.5
 local INIT_SIZE = 2
 local resolutions = {
 	{19.5,9},

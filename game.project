@@ -1,7 +1,7 @@
 [project]
-title =  Indicator2019
+title = Indicator2019
 version = 0.1
-dependencies = https://github.com/subsoap/defos/archive/master.zip
+dependencies = https://github.com/subsoap/defos/archive/master.zip,https://github.com/britzl/defold-screenshot/archive/master.zip
 custom_resources = 
 bundle_exclude_resources = 
 
@@ -14,8 +14,8 @@ game_binding = /game.input_bindingc
 use_accelerometer = 0
 
 [display]
-width = 960
-height = 540
+width = 540
+height = 960
 high_dpi = 1
 fullscreen = 0
 update_frequency = 60

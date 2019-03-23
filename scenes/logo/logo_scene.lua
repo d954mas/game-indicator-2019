@@ -1,5 +1,6 @@
 local BaseScene = require "libs.sm.scene"
 local SM = require "libs.sm.sm"
+local LEVELS = require "assets.levels.levels"
 
 ---@class LogoScene:Scene
 local Scene = BaseScene:subclass("LogoScene")
@@ -8,6 +9,7 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
+
 end
 
 function Scene:final(go_self)
@@ -15,6 +17,7 @@ end
 
 function Scene:update(go_self, dt)
     BaseScene.update(self,go_self,dt)
+    SM:show("GameScene",{lvl = LEVELS.LVL_1()})
 end
 
 function Scene:on_transition(transition)

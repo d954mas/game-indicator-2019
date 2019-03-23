@@ -1,0 +1,36 @@
+local MATCHER = require "scenes.game.matcher.matcher"
+---@class selfGameGui
+
+---@param self selfGameGui
+function init(self)
+	self.lbl_percent = gui.get_node("lbl_percent")
+end
+
+---@param self selfGameGui
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+---@param self selfGameGui
+function update(self, dt)
+	gui.set_text(self.lbl_percent,string.format("%.2f %%",  MATCHER.percent * 100 )  )
+end
+
+---@param self selfGameGui
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+---@param self selfGameGui
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+---@param self selfGameGui
+function on_reload(self)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end

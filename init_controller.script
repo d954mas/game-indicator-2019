@@ -8,9 +8,9 @@ local RX = require "libs.rx"
 local WORLD = require "world.world"
 
 COMMON.empty_ne("defos")
-
 local scenes = {
     require "scenes.logo.logo_scene",
+    require "scenes.game.game_scene",
 }
 function init(self)
     self.show_profiler = false

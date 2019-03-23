@@ -1,0 +1,35 @@
+local MATCHER = require "scenes.game.matcher.matcher"
+
+local RX = require "libs.rx"
+
+local Scheduler = RX.CooperativeScheduler.create()
+
+function init(self)
+	timer.delay(0.1,false,function ()
+		MATCHER:start_lvl()
+	end)
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	MATCHER:update_texture()
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

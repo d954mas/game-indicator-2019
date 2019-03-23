@@ -74,7 +74,7 @@ end
 
 ---@param self SMSceneControllerSelf
 function update(self, dt)
-    if self.scene then self.scene:update(self, dt)end
+    if self.scene and self.scene._state == self.scene._STATES.RUNNING then  self.scene:update(self, dt)end
     if self.scene and self.transition_co then
         check_transition_coroutine(self)
         if self.transition_co then

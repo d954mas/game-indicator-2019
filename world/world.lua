@@ -7,19 +7,25 @@ local RX = require "libs.rx"
 local M = COMMON.class("World")
 
 function M:reset()
-	self.ecs_world:clear()
-	SYSTEMS.init_systems(self.ecs_world)
+	if self.lvl then
+		self.lvl:unload()
+		self.lvl = nil
+	end
+end
+---@param lvl Level
+function M:set_lvl(lvl)
+	assert(lvl)
+	COMMON.i("LOAD LVL","[GAME]")
+	self.lvl = lvl
+	self.lvl:load()
 end
 
 function M:initialize()
-	self.ecs_world = ECS.world()
-	self.ecs_world.world = self
 	self.rx = RX.Subject()
 	self:reset()
 end
 
 function M:update(dt, no_save)
-	self.ecs_world:update(dt)
 end
 
 function M:dispose()
