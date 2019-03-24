@@ -15,7 +15,7 @@ use_accelerometer = 0
 
 [display]
 width = 540
-height = 960
+height = 1260
 high_dpi = 1
 fullscreen = 0
 update_frequency = 60
@@ -107,4 +107,7 @@ archive_location_prefix = archive
 [fmod]
 speaker_mode = stereo
 lib_path = .helpeditor/fmod/res
+
+[tracking]
+app_id = 
 

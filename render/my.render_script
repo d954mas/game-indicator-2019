@@ -7,6 +7,10 @@ local function fixed_projection(self,near, far, zoom)
     local yoffset = -(projected_height - render.get_height()) / 2
     self.p_w = projected_width
     self.p_h = projected_height
+    p_w = projected_width
+    p_h = projected_height
+    screen_width = render.get_window_width()
+    screen_height= render.get_window_width()
     return vmath.matrix4_orthographic(-projected_width/2, projected_width/2,-projected_height/2, projected_height/2, near, far)
 end
 --

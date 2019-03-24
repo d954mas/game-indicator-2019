@@ -39,13 +39,25 @@ end
 function Scene:update(go_self, dt)
     BaseScene.update(self,go_self,dt)
     if self.next_pos then
-        msg.post("@render:", "draw_line", { start_point = self.start_pos, end_point = self.next_pos, color = vmath.vector4(1,0,0,0.3) } )
+
+        pprint(self.start_pos)
         local point_a = vmath.vector3(self.start_pos.x+540/2,self.start_pos.y+960/2,0)
         local point_b = vmath.vector3(self.next_pos.x+540/2,self.next_pos.y+960/2,0)
+        pprint(point_a)
         local a = point_a.y - point_b.y
         local b = point_b.x - point_a.x
         local c = point_a.x * point_b.y - point_b.x * point_a.y
         model.set_constant("test_model#model","line",vmath.vector4(a,b,c,0))
+
+
+         a = self.start_pos.y - self.next_pos.y
+         b = self.next_pos.x - self.start_pos.x
+         c = self.start_pos.x * self.next_pos.y - self.next_pos.x * self.start_pos.y
+
+        local p1 = vmath.vector3(-540/2,(540/2 * a-c)/b,0)
+        local p2 = vmath.vector3(540/2,(-540/2 * a-c)/b,0)
+       -- pprint(p2)
+        msg.post("@render:", "draw_line", { start_point = p1, end_point = p2, color = vmath.vector4(1,0,0,0.3) } )
     end
 end
 
