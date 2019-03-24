@@ -135,7 +135,6 @@ function Scene:update(go_self, dt)
         local a = point_a.y - point_b.y
         local b = point_b.x - point_a.x
         local c = point_a.x * point_b.y - point_b.x * point_a.y
-
         local p1a = vmath.vector3(-540/2,(540/2 * a-c)/b,0)
         local p2a = vmath.vector3(540/2,(-540/2 * a-c)/b,0)
         --pprint(p1)
