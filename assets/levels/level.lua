@@ -12,7 +12,7 @@ function Lvl:initialize()
     ---@type Region[]
     self.figures = {}
     self.targets = {
-        0.5, 0.85, 0.95
+        0.60, 0.80, 0.95
     }
 end
 

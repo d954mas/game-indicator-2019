@@ -6,11 +6,11 @@ local Lvl = BaseLvl:subclass("Lvl1")
 function Lvl:initialize(...)
     BaseLvl.initialize(self,...)
     self.regions = {
-        Region("region_3",0,0,1)
+        Region("region_4",0,0,1)
     }
 
     self.figures = {
-        Region("rect",40,225,2)
+        Region("circle",0,0,1.2)
     }
 end
 
