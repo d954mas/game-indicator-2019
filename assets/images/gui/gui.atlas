@@ -4,6 +4,12 @@ images {
 images {
   image: "/assets/images/white.png"
 }
+images {
+  image: "/assets/images/gui/return.png"
+}
+images {
+  image: "/assets/images/gui/scrollVertical.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

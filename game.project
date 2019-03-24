@@ -1,7 +1,7 @@
 [project]
 title = Indicator2019
 version = 0.1
-dependencies = 
+dependencies = https://github.com/subsoap/defos/archive/master.zip
 custom_resources = 
 bundle_exclude_resources = 
 

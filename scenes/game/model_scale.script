@@ -10,9 +10,9 @@ end
 
 function update(self, dt)
 	if p_w then
-		print("*******")
-		pprint(p_w)
-		pprint(p_h)
+--		print("*******")
+	--	pprint(p_w)
+	--	pprint(p_h)
 		go.set_scale(vmath.vector3(50 * p_w/540,50*p_h/960,1))
 	end
 end

@@ -47,19 +47,19 @@ function Scene:update(go_self, dt)
         local start_pos= vmath.vector3(self.start_pos.x,self.start_pos.y,0)
         local end_pos = vmath.vector3(self.next_pos.x,self.next_pos.y,0)
         model.set_constant("test_model#model","screen",vmath.vector4(p_w,p_h,0,0))
-        
+
         -- pprint(start_pos)
-        pprint(self.start_pos)
+       -- pprint(self.start_pos)
     local point_a = vmath.vector3(self.start_pos.x+p_w/2,self.start_pos.y+p_h/2,0)
     local point_b = vmath.vector3(self.next_pos.x+p_w/2,self.next_pos.y+p_h/2,0)
-        pprint(point_a)
-        pprint(point_b)
+      --  pprint(point_a)
+     --   pprint(point_b)
         local a = point_a.y - point_b.y
         local b = point_b.x - point_a.x
         local c = point_a.x * point_b.y - point_b.x * point_a.y
         model.set_constant("test_model#model","line",vmath.vector4(a,b,c,0))
 
-       
+
         --pprint(point_a)
        --pprint(point_b)
     a = start_pos.y - end_pos.y
@@ -67,14 +67,14 @@ function Scene:update(go_self, dt)
     c = start_pos.x * end_pos.y - end_pos.x * start_pos.y
 
 
- 
+
         local p1 = vmath.vector3(-540/2,(540/2 * a-c)/b,0)
         local p2 = vmath.vector3(540/2,(-540/2 * a-c)/b,0)
 
         local a = point_a.y - point_b.y
         local b = point_b.x - point_a.x
         local c = point_a.x * point_b.y - point_b.x * point_a.y
-        
+
         local p1a = vmath.vector3(-540/2,(540/2 * a-c)/b,0)
         local p2a = vmath.vector3(540/2,(-540/2 * a-c)/b,0)
         --pprint(p1)

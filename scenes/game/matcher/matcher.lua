@@ -38,10 +38,13 @@ function Matcher:start_lvl()
 end
 
 function Matcher:render()
-    self:update_screenshot()
-   -- self.buffer, self.w, self.h = screenshot.buffer(1)
-    local resource_path = go.get("model_fill#model", "texture0")
-    resource.set_texture(resource_path, { type = resource.TEXTURE_TYPE_2D, width = self.w, height = self.h, format = resource.TEXTURE_FORMAT_RGBA }, self.buffer)
+    timer.delay(0.1,false,function()
+        self:update_screenshot()
+        -- self.buffer, self.w, self.h = screenshot.buffer(1)
+        local resource_path = go.get("model_fill#model", "texture0")
+        resource.set_texture(resource_path, { type = resource.TEXTURE_TYPE_2D, width = self.w, height = self.h, format = resource.TEXTURE_FORMAT_RGBA }, self.buffer)
+    end)
+
 end
 
 function Matcher:update_screenshot()
