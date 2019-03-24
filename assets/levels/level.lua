@@ -11,7 +11,9 @@ function Lvl:initialize()
     self.regions = {}
     ---@type Region[]
     self.figures = {}
-    self.target = 0.95
+    self.targets = {
+        0.5, 0.85, 0.95
+    }
 end
 
 function Lvl:create_go(factory_url,position,scale,image)

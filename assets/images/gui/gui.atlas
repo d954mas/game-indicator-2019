@@ -13,6 +13,9 @@ images {
 images {
   image: "/assets/images/gui/cross.png"
 }
+images {
+  image: "/assets/images/gui/star.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0
