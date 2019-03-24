@@ -30,6 +30,11 @@ function Scene:on_show()
 end
 
 function Scene:init(go_self)
+    go.set_position(vmath.vector3(10000,10000,0),"/line_top#sprite")
+    go.set_position(vmath.vector3(10000,10000,0),"/line_bottom#sprite")
+    self.start_pos = nil
+    self.next_pos = nil
+    self.touch_pos = nil
     self.subscriptions = RX.SubscriptionsStorage()
     self.subscriptions:add(WORLD.rx:go_distinct(self.scheduler):subscribe(function (v)
         if v == WORLD.COMMANDS.BTN_ACCEPTED then
