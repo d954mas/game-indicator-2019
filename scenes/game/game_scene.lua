@@ -39,25 +39,48 @@ end
 function Scene:update(go_self, dt)
     BaseScene.update(self,go_self,dt)
     if self.next_pos then
-
+       -- pprint(self.start_pos)
+        local y_offset = (p_h - 960)/2
+        local x_offset = (p_w - 540)/2
+        local scale_x = 540/p_w
+        local scale_y = 960/p_h
+        local start_pos= vmath.vector3(self.start_pos.x,self.start_pos.y*scale_y-y_offset,0)
+        local end_pos = vmath.vector3(self.next_pos.x,self.next_pos.y*scale_y-y_offset,0)
+        model.set_constant("test_model#model","screen",vmath.vector4(p_w,p_h,0,0))
+        
+        -- pprint(start_pos)
         pprint(self.start_pos)
-        local point_a = vmath.vector3(self.start_pos.x+540/2,self.start_pos.y+960/2,0)
-        local point_b = vmath.vector3(self.next_pos.x+540/2,self.next_pos.y+960/2,0)
+    local point_a = vmath.vector3(self.start_pos.x+p_w/2,self.start_pos.y+p_h/2,0)
+    local point_b = vmath.vector3(self.next_pos.x+p_w/2,self.next_pos.y+p_h/2,0)
         pprint(point_a)
+        pprint(point_b)
         local a = point_a.y - point_b.y
         local b = point_b.x - point_a.x
         local c = point_a.x * point_b.y - point_b.x * point_a.y
         model.set_constant("test_model#model","line",vmath.vector4(a,b,c,0))
 
+       
+        --pprint(point_a)
+       --pprint(point_b)
+    a = start_pos.y - end_pos.y
+    b = end_pos.x - start_pos.x
+    c = start_pos.x * end_pos.y - end_pos.x * start_pos.y
 
-         a = self.start_pos.y - self.next_pos.y
-         b = self.next_pos.x - self.start_pos.x
-         c = self.start_pos.x * self.next_pos.y - self.next_pos.x * self.start_pos.y
 
+ 
         local p1 = vmath.vector3(-540/2,(540/2 * a-c)/b,0)
         local p2 = vmath.vector3(540/2,(-540/2 * a-c)/b,0)
+
+        local a = point_a.y - point_b.y
+        local b = point_b.x - point_a.x
+        local c = point_a.x * point_b.y - point_b.x * point_a.y
+        
+        local p1a = vmath.vector3(-540/2,(540/2 * a-c)/b,0)
+        local p2a = vmath.vector3(540/2,(-540/2 * a-c)/b,0)
+        --pprint(p1)
        -- pprint(p2)
-        msg.post("@render:", "draw_line", { start_point = p1, end_point = p2, color = vmath.vector4(1,0,0,0.3) } )
+    msg.post("@render:", "draw_line", { start_point = p1, end_point = p2, color = vmath.vector4(1,0,0,0.3) } )
+   -- msg.post("@render:", "draw_line", { start_point = p1a, end_point = p2a, color = vmath.vector4(1,1,0,0.3) } )
     end
 end
 
