@@ -17,6 +17,7 @@ function init(self)
     COMMON.input_acquire()
     profiler.enable_ui(true)
     profiler.set_ui_vsync_wait_visible(false)
+    profiler.set_ui_view_mode(profiler.VIEW_MODE_MINIMIZED)
    -- defos.set_view_size(nil, nil, 960, 540)
     --region FIX module not found
     local reg_scenes = {}

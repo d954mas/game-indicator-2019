@@ -12,9 +12,8 @@ void main()
     // Pre-multiply alpha since all runtime textures already are
     vec4 tint_pm = vec4(tint.xyz * tint.w, tint.w);
     vec4 color = texture2D(tex0, var_texcoord0.xy) * tint_pm;
-    if(line.x != 0.0 ||  line.y != 0.0  || line.z != 0.0){
+    //if(line.x != 0.0 ||  line.y != 0.0  || line.z != 0.0){
         float coord_x = var_texcoord0.x*540.0, coord_y = var_texcoord0.y*960.0;
-  //  if (color.r == 1 && color.g == 0 && color.b == 0 && color.a == 1 ) {
     float number = line.x *coord_x + line.y * coord_y + line.z;
         if(number > 0.0){
             float x0 = coord_x, y0 = coord_y;
@@ -37,9 +36,9 @@ void main()
                 discard;
             }
         }
-    }else{
-        discard;
-    }
+   // }else{
+    //    discard;
+    //}
 
    // }else{
     //    discard;

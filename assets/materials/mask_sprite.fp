@@ -7,7 +7,7 @@ uniform lowp vec4 tint;
 void main()
 {
     vec4 mask_color = texture2D(DIFFUSE_TEXTURE, var_texcoord0.xy);
-    if (mask_color.a < 1.0) {
+    if (mask_color.a < 0.9) {
         discard;
     }
     gl_FragColor = mask_color;

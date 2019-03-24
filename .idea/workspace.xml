@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3c62f91f-e262-404b-a264-56f876977135" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/materials/mask_sprite.fp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/mask_sprite.fp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/materials/model.fp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/materials/model.fp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init_controller.script" beforeDir="false" afterPath="$PROJECT_DIR$/init_controller.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/game.collection" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game.collection" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/matcher/matcher.lua" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/matcher/matcher.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/matcher/matcher_update.script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/matcher/matcher_update.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot/src/screenshot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/screenshot/src/screenshot.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,10 +31,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/screenshot/src/screenshot.cpp">
+        <entry file="file://$PROJECT_DIR$/init_controller.script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
+            <state relative-caret-position="57">
+              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -122,7 +120,6 @@
         <option value="$PROJECT_DIR$/libs/subscription_storage.lua" />
         <option value="$PROJECT_DIR$/libs/sm/scene.lua" />
         <option value="$PROJECT_DIR$/libs/common.lua" />
-        <option value="$PROJECT_DIR$/init_controller.script" />
         <option value="$PROJECT_DIR$/world/polygon.lua" />
         <option value="$PROJECT_DIR$/world/point.lua" />
         <option value="$PROJECT_DIR$/libs/sm/go/scene_controller.script" />
@@ -144,12 +141,13 @@
         <option value="$PROJECT_DIR$/scenes/game/matcher/matcher_update.script" />
         <option value="$PROJECT_DIR$/screenshot/src/screenshot.cpp" />
         <option value="$PROJECT_DIR$/scenes/game/matcher/matcher.lua" />
+        <option value="$PROJECT_DIR$/init_controller.script" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="97" />
-    <option name="y" value="51" />
+    <option name="x" value="209" />
+    <option name="y" value="5" />
     <option name="width" value="1606" />
     <option name="height" value="744" />
   </component>
@@ -171,40 +169,13 @@
             <path>
               <item name="Idicator2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="Indicator2019" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="screenshot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Idicator2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="Indicator2019" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="materials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Idicator2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Indicator2019" type="462c0819:PsiDirectoryNode" />
-              <item name="drawpixels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Idicator2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Indicator2019" type="462c0819:PsiDirectoryNode" />
-              <item name="drawpixels" type="462c0819:PsiDirectoryNode" />
+              <item name="screenshot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Idicator2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Indicator2019" type="462c0819:PsiDirectoryNode" />
-              <item name="render" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Idicator2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Indicator2019" type="462c0819:PsiDirectoryNode" />
-              <item name="scenes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Idicator2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Indicator2019" type="462c0819:PsiDirectoryNode" />
-              <item name="scenes" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -262,7 +233,8 @@
       <workItem from="1551208470656" duration="55000" />
       <workItem from="1551688175428" duration="2592000" />
       <workItem from="1551775507665" duration="11090000" />
-      <workItem from="1553375178340" duration="6903000" />
+      <workItem from="1553375178340" duration="7739000" />
+      <workItem from="1553384081681" duration="2378000" />
     </task>
     <task id="LOCAL-00001" summary="sm">
       <created>1548882386568</created>
@@ -275,7 +247,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94181000" />
+    <option name="totallyTimeSpent" value="97395000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -287,10 +259,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="97" y="51" width="1606" height="744" extended-state="0" />
-    <editor active="true" />
+    <frame x="209" y="5" width="1606" height="744" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.38258064" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.38774192" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -306,7 +277,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298122" />
       <window_info anchor="bottom" id="LuaCheck" order="7" weight="0.3298122" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.51472867" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.82790697" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.49612403" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
@@ -434,13 +405,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/sm/go/scene_loader.script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/constants.lua">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -534,13 +498,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/game.collection">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/init_controller.script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="24" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/sm/go/scene_controller.script">
       <provider selected="true" editor-type-id="text-editor">
@@ -692,24 +649,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/matcher/matcher_update.script">
+    <entry file="jar://$USER_HOME$/development/Defold/defold_api.zip!/api/profiler.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scenes/game/matcher/matcher.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="177">
+          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/screenshot/src/screenshot.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
+        <state relative-caret-position="160">
+          <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/matcher/matcher_update.script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/matcher/matcher.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init_controller.script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
         </state>
       </provider>
     </entry>
