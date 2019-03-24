@@ -9,7 +9,7 @@ local SM = require "libs.sm.sm"
 function init(self)
 	COMMON.input_acquire("/gui#script")
 	self.lbl_percent = gui.get_node("lbl_percent")
-
+	gui.animate(gui.get_node("root"),gui.PROP_COLOR,vmath.vector4(1,1,1,1),gui.EASING_LINEAR,2,0.2)
 end
 
 ---@param self selfGameGui
@@ -19,7 +19,12 @@ end
 
 ---@param self selfGameGui
 function update(self, dt)
-	gui.set_text(self.lbl_percent,string.format("%.2f %%",  MATCHER.percent * 100 )  )
+	if MATCHER.percent >= WORLD.lvl.target then
+		gui.set_color(self.lbl_percent,vmath.vector3(0,1,0,1))
+	else
+		gui.set_color(self.lbl_percent,vmath.vector3(1,1,1,1))
+	end
+	gui.set_text(self.lbl_percent,string.format("%.2f%% из %.f%%",  MATCHER.percent * 100,WORLD.lvl.target * 100  )  )
 end
 
 ---@param self selfGameGui

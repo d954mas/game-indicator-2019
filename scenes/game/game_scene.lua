@@ -17,6 +17,7 @@ function Scene:on_show()
     COMMON.input_acquire()
     COMMON.input_acquire("/gui#script")
     sprite.set_constant("/line_top#sprite","tint", vmath.vector4(0,0,1,1))
+
     timer.delay(0.1,false,function () MATCHER:render() end)
     timer.delay(0.2,false,function ()
         ---@type Level
@@ -120,6 +121,10 @@ function Scene:on_input(go_self, action_id, action)
     if action_id == COMMON.HASHES.INPUT_TOUCH then
         local touch_pos = screen_to_world(vmath.vector3(action.x, action.y,0))
         if action.pressed then
+            if self.start_pos and self.start_pos.x == -10000 and self.start_pos.y == 10000 then
+                self.start_pos = nil
+                self.next_pos = nil
+            end
             if self.start_pos then
                 local point_a = vmath.vector3(self.start_pos.x,self.start_pos.y,0)
                 local point_b = vmath.vector3(self.next_pos.x,self.next_pos.y,0)
@@ -132,7 +137,7 @@ function Scene:on_input(go_self, action_id, action)
                     self.start_pos = touch_pos
                 end
                 local dist = math.sqrt((touch_pos.x - self.start_pos.x)^2 + (touch_pos.y - self.start_pos.y)^2)
-                if dist < 20 then
+                if dist < 40 then
                     self.touch_pos = touch_pos
                 end
             else

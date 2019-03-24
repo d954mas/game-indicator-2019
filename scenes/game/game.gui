@@ -15,8 +15,8 @@ background_color {
 }
 nodes {
   position {
-    x: 4.0
-    y: 937.0
+    x: 0.0
+    y: 0.0
     z: 0.0
     w: 1.0
   }
@@ -39,19 +39,73 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.4
-    y: 0.4
-    z: 0.4
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+  type: TYPE_BOX
+  blend_mode: BLEND_MODE_ALPHA
+  texture: "gui/empty"
+  id: "root"
+  xanchor: XANCHOR_NONE
+  yanchor: YANCHOR_NONE
+  pivot: PIVOT_CENTER
+  adjust_mode: ADJUST_MODE_FIT
+  layer: ""
+  inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
+  alpha: 0.0
+  template_node_child: false
+  size_mode: SIZE_MODE_MANUAL
+}
+nodes {
+  position {
+    x: 271.0
+    y: 909.0
+    z: 0.0
+    w: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale {
+    x: 1.5
+    y: 1.5
+    z: 1.0
+    w: 1.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+    z: 0.0
+    w: 1.0
+  }
+  color {
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Fill:0%"
+  text: "24% \320\270\320\267 96%"
   font: "Roboto-Bold"
   id: "lbl_percent"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_W
+  pivot: PIVOT_CENTER
   outline {
     x: 1.0
     y: 1.0
@@ -66,6 +120,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
+  parent: "root"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -108,6 +163,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "btn_accept"
+  parent: "root"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -267,6 +323,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "btn_mirror"
+  parent: "root"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -481,6 +538,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "btn_restart"
+  parent: "root"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -695,6 +753,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "btn_cancel"
+  parent: "root"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
