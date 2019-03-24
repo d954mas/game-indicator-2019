@@ -20,14 +20,14 @@ end
 ---@param self selfGameGui
 function update(self, dt)
 	gui.set_color(self.lbl_percent,vmath.vector3(0.95,0.95,0.95,1))
-	gui.set_text(self.lbl_percent,string.format("%.2f%% из %.f%%",  MATCHER.percent * 100,WORLD.lvl.targets[1] * 100))
+	gui.set_text(self.lbl_percent,string.format("%.1f%% из %.f%%",  MATCHER.percent * 100,WORLD.lvl.targets[1] * 100))
 	local current_idx = 1
 	for i,target in ipairs(WORLD.lvl.targets) do
 		local n_star = gui.get_node("star_"..i)
 		if MATCHER.percent >= target then
 			current_idx = i+1
 			gui.set_color(n_star,vmath.vector3(0,1,0,1))
-			gui.set_text(self.lbl_percent,string.format("%.2f%% из %.f%%",  MATCHER.percent * 100,target * 100))
+			gui.set_text(self.lbl_percent,string.format("%.1f%% из %.f%%",  MATCHER.percent * 100,target * 100))
 		else
 			gui.set_color(n_star,vmath.vector3(0.95,0.95,0.95,1))
 		end
@@ -35,7 +35,7 @@ function update(self, dt)
 			gui.set_color(self.lbl_percent,vmath.vector3(0,1,0,1))
 		end
 	end
-	gui.set_text(self.lbl_percent,string.format("%.2f%% из %.f%%",  MATCHER.percent * 100,WORLD.lvl.targets[math.min(current_idx,3)] * 100))
+	gui.set_text(self.lbl_percent,string.format("%.1f%% из %.f%%",  MATCHER.percent * 100,WORLD.lvl.targets[math.min(current_idx,3)] * 100))
 end
 
 ---@param self selfGameGui
@@ -60,6 +60,14 @@ function on_input(self, action_id, action)
 		GOOEY.button("btn_cancel", action_id, action, function(button)
 			WORLD.rx:onNext(WORLD.COMMANDS.BTN_CANCEL)
 			--SM:reload()
+		end)
+		GOOEY.button("btn_left", action_id, action, function(button)
+			WORLD.rx:onNext(WORLD.COMMANDS.BTN_LOAD_PREV)
+			return true
+		end)
+		GOOEY.button("btn_right", action_id, action, function(button)
+			WORLD.rx:onNext(WORLD.COMMANDS.BTN_LOAD_NEXT)
+			return true
 		end)
 		-- and so on
 	end)

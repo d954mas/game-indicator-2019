@@ -4,6 +4,7 @@ local WORLD = require "world.world"
 local COMMON = require "libs.common"
 local MATCHER = require "scenes.game.matcher.matcher"
 local RX = require "libs.rx"
+local LEVELS = require "assets.levels.levels"
 
 ---@class GameScene:Scene
 local Scene = BaseScene:subclass("GameScene")
@@ -56,6 +57,36 @@ function Scene:init(go_self)
             self.next_pos.y = 10000
             self.touch_pos = nil
             go.set_position(vmath.vector3(10000,10000,0),"/line_top#sprite")
+        elseif v == WORLD.COMMANDS.BTN_LOAD_NEXT then
+            ---@type Level
+            local lvl = self._input.lvl
+            for i=1,100500 do
+                local lvl_class = LEVELS["LVL_" .. i]
+                if not lvl then break end
+                if lvl:isInstanceOf(lvl_class) then
+                    local lvl_class = LEVELS["LVL_" .. i+1]
+                    if lvl_class then
+                        self._input.lvl = lvl_class()
+                        SM:reload()
+                    end
+                    break
+                end
+            end
+        elseif v == WORLD.COMMANDS.BTN_LOAD_PREV then
+            ---@type Level
+            local lvl = self._input.lvl
+            for i=1,100500 do
+                local lvl_class = LEVELS["LVL_" .. i]
+                if not lvl then break end
+                if lvl:isInstanceOf(lvl_class) then
+                    local lvl_class = LEVELS["LVL_" .. i-1]
+                    if lvl_class then
+                        self._input.lvl = lvl_class()
+                        SM:reload()
+                    end
+                    break
+                end
+            end
         end
     end))
 

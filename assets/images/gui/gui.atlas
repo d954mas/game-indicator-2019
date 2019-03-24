@@ -16,6 +16,12 @@ images {
 images {
   image: "/assets/images/gui/star.png"
 }
+images {
+  image: "/assets/images/gui/arrowLeft.png"
+}
+images {
+  image: "/assets/images/gui/arrowRight.png"
+}
 margin: 0
 extrude_borders: 2
 inner_padding: 0

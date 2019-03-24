@@ -4,6 +4,12 @@ images {
 images {
   image: "/assets/images/regions/region_2.png"
 }
+images {
+  image: "/assets/images/regions/region_3.png"
+}
+images {
+  image: "/assets/images/regions/region_circle.png"
+}
 margin: 0
-extrude_borders: 0
+extrude_borders: 2
 inner_padding: 0
