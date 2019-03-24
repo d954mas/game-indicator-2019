@@ -19,7 +19,7 @@ end
 
 ---@param self selfGameGui
 function update(self, dt)
-	gui.set_color(self.lbl_percent,vmath.vector3(1,1,1,1))
+	gui.set_color(self.lbl_percent,vmath.vector3(0.95,0.95,0.95,1))
 	gui.set_text(self.lbl_percent,string.format("%.2f%% из %.f%%",  MATCHER.percent * 100,WORLD.lvl.targets[1] * 100))
 	local current_idx = 1
 	for i,target in ipairs(WORLD.lvl.targets) do

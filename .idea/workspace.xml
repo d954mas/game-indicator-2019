@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3c62f91f-e262-404b-a264-56f876977135" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/gui/gui.atlas" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/gui/gui.atlas" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/levels/level.lua" beforeDir="false" afterPath="$PROJECT_DIR$/assets/levels/level.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/button.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/button.gui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/button_icon.gui" beforeDir="false" afterPath="$PROJECT_DIR$/gooey/themes/dirtylarry/components/button_icon.gui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/game.gui" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game.gui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/game/game.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game.gui_script" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scenes/game/game.gui_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
+            <state relative-caret-position="151">
+              <caret line="10" column="20" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -71,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/levels/level_1.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+            <state relative-caret-position="204">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -136,7 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scene_transition</find>
       <find>on_tr</find>
       <find>transiti</find>
       <find>debug_level</find>
@@ -166,6 +160,7 @@
       <find>def</find>
       <find>pprint</find>
       <find>stack</find>
+      <find>lbl_percent</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -223,17 +218,16 @@
         <option value="$PROJECT_DIR$/world/world.lua" />
         <option value="$PROJECT_DIR$/scenes/game/matcher/matcher_update.script" />
         <option value="$PROJECT_DIR$/render/my.render_script" />
-        <option value="$PROJECT_DIR$/assets/levels/level_1.lua" />
         <option value="$PROJECT_DIR$/init_controller.script" />
         <option value="$PROJECT_DIR$/scenes/game/game_scene.lua" />
         <option value="$PROJECT_DIR$/assets/levels/level.lua" />
         <option value="$PROJECT_DIR$/scenes/game/game.gui_script" />
+        <option value="$PROJECT_DIR$/assets/levels/level_1.lua" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="y" value="-17" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
     <option name="width" value="1386" />
     <option name="height" value="744" />
   </component>
@@ -345,10 +339,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="0" width="1386" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2983631" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29747775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -723,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/levels/level_1.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/game_scene.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -756,8 +743,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scenes/game/game.gui_script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
+        <state relative-caret-position="151">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/levels/level_1.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
