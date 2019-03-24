@@ -44,8 +44,8 @@ function Scene:update(go_self, dt)
         local x_offset = (p_w - 540)/2
         local scale_x = 540/p_w
         local scale_y = 960/p_h
-        local start_pos= vmath.vector3(self.start_pos.x,self.start_pos.y*scale_y-y_offset,0)
-        local end_pos = vmath.vector3(self.next_pos.x,self.next_pos.y*scale_y-y_offset,0)
+        local start_pos= vmath.vector3(self.start_pos.x,self.start_pos.y,0)
+        local end_pos = vmath.vector3(self.next_pos.x,self.next_pos.y,0)
         model.set_constant("test_model#model","screen",vmath.vector4(p_w,p_h,0,0))
         
         -- pprint(start_pos)

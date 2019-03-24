@@ -14,7 +14,7 @@ game_binding = /game.input_bindingc
 use_accelerometer = 0
 
 [display]
-width = 340
+width = 540
 height = 960
 high_dpi = 1
 fullscreen = 0
