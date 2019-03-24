@@ -159,6 +159,11 @@ local function show_new_scene(self, old_scene, new_scene, input,options)
 
     if old_scene then unload_scene(self,old_scene,new_scene) end
 
+    --need for reload
+    if new_scene._state == STATES.UNLOADED then
+        load(self,new_scene)
+    end
+    
     --wait next scene loaded
     while new_scene._state == STATES.LOADING do coroutine.yield() end
 

@@ -7,7 +7,10 @@ local RX = require "libs.rx"
 local M = COMMON.class("World")
 
 M.COMMANDS = {
-	BTN_ACCEPTED = "BTN_ACCEPTED"
+	BTN_ACCEPTED = "BTN_ACCEPTED",
+	BTN_MIRROR= "BTN_MIRROR",
+	BTN_RESTART= "BTN_RESTART",
+	BTN_CANCEL= "BTN_CANCEL"
 }
 
 function M:reset()

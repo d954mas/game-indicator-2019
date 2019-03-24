@@ -39,6 +39,7 @@ end
 
 function init(self)
     self.tile_pred = render.predicate({"tile"})
+    self.tile2_pred = render.predicate({"tile2"})
     self.gui_pred = render.predicate({"gui"})
     self.text_pred = render.predicate({"text"})
     self.particle_pred = render.predicate({"particle"})
@@ -74,6 +75,13 @@ function update(self)
     render.set_viewport(0, 0, render.get_window_width(), render.get_window_height())
     render.set_view(self.view)
 
+    render.enable_state(render.STATE_BLEND)
+    render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
+    render.disable_state(render.STATE_CULL_FACE)
+
+    render.set_projection(get_projection(self))
+    render.draw(self.tile2_pred)
+
     render.set_depth_mask(false)
     render.disable_state(render.STATE_DEPTH_TEST)
     render.disable_state(render.STATE_STENCIL_TEST)
@@ -81,7 +89,7 @@ function update(self)
     render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
     render.disable_state(render.STATE_CULL_FACE)
 
-    render.set_projection(get_projection(self))
+
 
     -- 1. We need to disable color drawing while rendering the mask
     render.set_color_mask(false, false, false, false)
@@ -105,11 +113,12 @@ function update(self)
     render.enable_state(render.STATE_BLEND)
     render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
     render.disable_state(render.STATE_CULL_FACE)
-    
+
     render.draw(self.tile_pred)
     render.draw(self.model_pred)
     render.disable_state(render.STATE_STENCIL_TEST)
     render.draw(self.particle_pred)
+    render.draw(self.tile2_pred)
 
 
     render.draw_debug3d()
